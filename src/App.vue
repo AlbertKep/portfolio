@@ -1,4 +1,5 @@
 <template>
+  <the-hamburger-menu />
   <Home />
   <About />
   <Technologies />
@@ -7,15 +8,17 @@
 </template>
 
 <script>
-import Home from "./components/pages/Home.vue";
-import About from "./components/pages/About.vue";
-import Technologies from "./components/pages/Technologies.vue";
-import Projects from "./components/pages/Projects.vue";
-import Contacts from "./components/pages/Contacts.vue";
+import TheHamburgerMenu from "./components/UI/TheHamburgerMenu";
+import Home from "./components/pages/Home";
+import About from "./components/pages/About";
+import Technologies from "./components/pages/Technologies";
+import Projects from "./components/pages/Projects";
+import Contacts from "./components/pages/Contacts";
 
 export default {
   name: "App",
   components: {
+    TheHamburgerMenu,
     Home,
     About,
     Technologies,
@@ -25,7 +28,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap");
 * {
   margin: 0;

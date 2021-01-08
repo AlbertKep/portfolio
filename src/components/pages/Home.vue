@@ -1,12 +1,19 @@
 <template>
   <section class="home">
-    <h1>Home</h1>
+    <the-header :title="title" />
   </section>
 </template>
 
 <script>
+import TheHeader from "../UI/TheHeader";
 export default {
   name: "Home",
+  components: { TheHeader },
+  data() {
+    return {
+      title: "Home",
+    };
+  },
 };
 </script>
 
