@@ -1,5 +1,6 @@
 <template>
   <the-hamburger-menu />
+  <the-menu />
   <Home />
   <About />
   <Technologies />
@@ -9,6 +10,7 @@
 
 <script>
 import TheHamburgerMenu from "./components/UI/TheHamburgerMenu";
+import TheMenu from "./components/UI/TheMenu";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Technologies from "./components/pages/Technologies";
@@ -19,6 +21,7 @@ export default {
   name: "App",
   components: {
     TheHamburgerMenu,
+    TheMenu,
     Home,
     About,
     Technologies,
@@ -33,11 +36,13 @@ export default {
 * {
   margin: 0;
   padding: 0;
-  background-color: #904beb;
   font-family: "Mukta", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #fff;
   text-align: center;
+}
+#app {
+  background-color: #904beb;
 }
 </style>

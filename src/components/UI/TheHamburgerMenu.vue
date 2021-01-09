@@ -1,26 +1,29 @@
 <template>
-  <div class="hamburger-menu" @click="isActive = !isActive">
+  <div class="hamburger-menu">
     <span
       class="hamburger-menu__element"
-      :class="{ 'hamburger-menu__element--active-menu-one': isActive }"
+      :class="{ 'hamburger-menu__element--active-menu-one': menuIsActive }"
     ></span>
     <span
       class="hamburger-menu__element"
-      :class="{ 'hamburger-menu__element--active-menu-two': isActive }"
+      :class="{ 'hamburger-menu__element--active-menu-two': menuIsActive }"
     ></span>
     <span
       class="hamburger-menu__element"
-      :class="{ 'hamburger-menu__element--active-menu-three': isActive }"
+      :class="{ 'hamburger-menu__element--active-menu-three': menuIsActive }"
     ></span>
   </div>
 </template>
 <script>
 export default {
   data() {
-    return {
-      isActive: false,
-    };
+    return {};
   },
+  computed: {
+    menuIsActive() {
+      return this.$store.state.menuIsActive;
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -30,6 +33,7 @@ export default {
   right: 10%;
   top: 10%;
   width: 20%;
+  z-index: 999;
 
   &__element {
     display: block;
@@ -41,16 +45,16 @@ export default {
 
     &--active-menu-one {
       width: 100%;
+      // background-color: #904beb;
     }
     &--active-menu-two {
       width: 66%;
+      // background-color: #904beb;
     }
     &--active-menu-three {
       width: 33%;
+      // background-color: #904beb;
     }
-    // &--active-menu {
-    //   width: 100%;
-    // }
   }
 }
 </style>
