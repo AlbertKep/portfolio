@@ -1,5 +1,5 @@
 <template>
-  <div class="hamburger-menu">
+  <div class="hamburger-menu" @click="toggleMenu">
     <span
       class="hamburger-menu__element"
       :class="{ 'hamburger-menu__element--active-menu-one': menuIsActive }"
@@ -23,6 +23,11 @@ export default {
     menuIsActive() {
       return this.$store.state.menuIsActive;
     }
+  },
+  methods: {
+    toggleMenu() {
+      this.$store.dispatch("menuIsActive");
+    }
   }
 };
 </script>
@@ -45,15 +50,15 @@ export default {
 
     &--active-menu-one {
       width: 100%;
-      // background-color: #904beb;
+      background-color: #904beb;
     }
     &--active-menu-two {
       width: 66%;
-      // background-color: #904beb;
+      background-color: #904beb;
     }
     &--active-menu-three {
       width: 33%;
-      // background-color: #904beb;
+      background-color: #904beb;
     }
   }
 }

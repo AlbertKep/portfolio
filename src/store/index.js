@@ -5,6 +5,16 @@ const store = createStore({
     return {
       menuIsActive: true
     }
+  },
+  mutations: {
+    menuIsActive(state) {
+      state.menuIsActive = !state.menuIsActive
+    }
+  },
+  actions: {
+    menuIsActive({commit}) {
+      commit('menuIsActive')
+    }
   }
 })
 
