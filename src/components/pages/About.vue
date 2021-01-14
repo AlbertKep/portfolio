@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="about-container">
     <the-header :title="title" />
   </section>
 </template>
@@ -12,11 +12,14 @@ export default {
   components: { TheHeader },
   data() {
     return {
-      title: "About",
+      title: "About"
     };
-  },
+  }
 };
 </script>
 
 <style>
+.about-container {
+  height: 100vh;
+}
 </style>

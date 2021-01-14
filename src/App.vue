@@ -26,8 +26,8 @@ export default {
     About,
     Technologies,
     Projects,
-    Contacts,
-  },
+    Contacts
+  }
 };
 </script>
 
