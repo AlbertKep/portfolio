@@ -12,11 +12,14 @@ export default {
   components: { TheHeader },
   data() {
     return {
-      title: "Technologies",
+      title: "Technologies"
     };
-  },
+  }
 };
 </script>
 
 <style>
+section {
+  height: 100vh;
+}
 </style>

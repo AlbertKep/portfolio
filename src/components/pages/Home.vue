@@ -11,9 +11,9 @@ export default {
   components: { TheHeader },
   data() {
     return {
-      title: "Home",
+      title: "Home"
     };
-  },
+  }
 };
 </script>
 

@@ -12,9 +12,9 @@ export default {
   components: { TheHeader },
   data() {
     return {
-      title: "Contacts",
+      title: "Contacts"
     };
-  },
+  }
 };
 </script>
 

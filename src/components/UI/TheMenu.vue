@@ -42,6 +42,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .menu-container {
+  z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
@@ -52,7 +53,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.6s ease-in-out;
+  transition: all 0.1s ease-in-out;
 
   &--show-menu {
     visibility: visible;

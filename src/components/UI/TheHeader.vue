@@ -1,5 +1,9 @@
 <template>
-  <h2 class="title">{{ title }}</h2>
+  <div class="container">
+    <h2 class="container__title">
+      {{ title }}
+    </h2>
+  </div>
 </template>
 <script>
 export default {
@@ -10,10 +14,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.title {
-  font-size: 2em;
+.container {
+  padding: 2em 0 2em 0;
   text-align: left;
-  padding: 1em 0 0 1em;
-  border-bottom: 2px solid #fff;
+
+  &__title {
+    display: inline-block;
+    font-size: 2em;
+    margin: 1em 0 0 1em;
+    border-bottom: solid #fff;
+  }
 }
 </style>
