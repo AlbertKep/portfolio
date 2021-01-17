@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  padding: 2em 0 2em 0;
+  // padding: 1em 0 1em 0;
   text-align: left;
 
   &__title {

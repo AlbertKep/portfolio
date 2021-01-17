@@ -40,8 +40,8 @@ export default {
 </script>
 <style scoped>
 .about-container__content {
-  margin-top: 1em;
-  padding: 1.5em;
+  margin-top: 0.5em;
+  padding: 1em;
   opacity: 0;
   transform: translateY(0);
   transition: all 1.5s cubic-bezier(0.31, 0.14, 1, 1);
