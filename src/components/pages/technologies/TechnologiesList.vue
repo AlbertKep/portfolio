@@ -1,31 +1,21 @@
 <template>
   <div class="use-container__technologies">
-    <img :src="vueIcon" alt="my-logo" />
-    <img :src="fireBaseIcon" alt="my-logo" />
-    <img :src="javaScriptIcon" alt="my-logo" />
-    <img :src="greenSockIcon" alt="my-logo" />
-
-    <span>JS</span>
-    <span>Css</span>
-    <span>html</span>
-    <span>FireBase</span>
+    <div v-for="icon in icons" :key="icon.name" class="icon-container">
+      <img class="icon-container__icon" :src="icon.name" alt="vue" />
+      <span class="icon-container__title">{{ icon.title }}</span>
+    </div>
   </div>
 </template>
 
 <script>
-import VueIcon from "../../../assets/vue-js.svg";
-import FireBase from "../../../assets/firebase-icon.svg";
-import JavaScript from "../../../assets/javascript.svg";
-import GreenSock from "../../../assets/gsap-greensock.svg";
-
 export default {
-  data() {
-    return {
-      vueIcon: VueIcon,
-      fireBaseIcon: FireBase,
-      javaScriptIcon: JavaScript,
-      greenSockIcon: GreenSock
-    };
+  props: {
+    icons: {
+      type: Object,
+      default: function() {
+        return { message: "Technologies" };
+      }
+    }
   }
 };
 </script>
@@ -33,15 +23,13 @@ export default {
 .use-container__technologies {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
-  span {
+}
+.icon-container {
+  &__icon {
     display: block;
-  }
-  img {
-    display: block;
-    width: 2em;
-    height: 2em;
-    justify-self: center;
+    width: 1.5em;
+    margin: auto;
+    padding: 0.2em;
   }
 }
 </style>
