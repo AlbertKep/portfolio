@@ -14,27 +14,21 @@
 </template>
 
 <script>
+import animation from "@/mixins/startAnimation";
 export default {
-  data() {
-    return {
-      observer: null,
-      options: {
-        root: null,
-        threShold: 0.5,
-        rootMargin: "0px"
-      }
-    };
-  },
+  mixins: [animation],
+
   mounted() {
-    this.observer = new IntersectionObserver(([entry]) => {
-      if (entry && entry.isIntersecting) {
-        entry.target.classList.add("start-animation");
-      }
-    }, this.options);
-    this.observer.observe(this.$refs.aboutContent);
+    this.startAnimation(
+      this.observerCallback,
+      "start-animation",
+      this.$refs.aboutContent
+    );
   },
-  unmounted() {
-    this.observer.disconnect();
+  methods: {
+    observerCallback(entry, clss) {
+      entry.target.classList.add(clss);
+    }
   }
 };
 </script>

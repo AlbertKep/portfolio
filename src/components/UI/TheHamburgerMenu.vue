@@ -37,6 +37,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .menu-container {
+  z-index: 1;
   background-color: #fff;
   border-radius: 0 0 0 100%;
   position: fixed;

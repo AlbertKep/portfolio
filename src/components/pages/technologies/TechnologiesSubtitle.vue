@@ -1,5 +1,5 @@
 <template>
-  <h3 class="technologies__subtitle">{{ title }}:</h3>
+  <h3 class="technologies__subtitle">{{ title }}</h3>
 </template>
 
 <script>
