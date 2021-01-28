@@ -14,7 +14,7 @@ import TheMenu from "./components/UI/TheMenu";
 import Home from "./components/pages/Home";
 import About from "./components/pages/about/About";
 import Technologies from "./components/pages/technologies/Technologies";
-import Projects from "./components/pages/Projects";
+import Projects from "./components/pages/projects/Projects";
 import Contacts from "./components/pages/Contacts";
 
 export default {
