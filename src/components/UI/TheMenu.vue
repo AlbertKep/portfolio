@@ -63,8 +63,7 @@ export default {
     transform: scale(1);
   }
   &__element {
-    // color: #904beb;
-    color: rgb(2, 0, 36);
+    color: #904beb;
     list-style-type: none;
     font-size: 1.7em;
     padding-top: 0.5em;
