@@ -1,5 +1,5 @@
 <template>
-  <section class="contacts">
+  <section class="contact">
     <the-header :title="title" />
     <contact-form />
   </section>
@@ -19,9 +19,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.contacts {
-  height: 100vh;
-}
-</style>
