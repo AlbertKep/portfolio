@@ -15,7 +15,7 @@ import Home from "./components/pages/Home";
 import About from "./components/pages/about/About";
 import Technologies from "./components/pages/technologies/Technologies";
 import Projects from "./components/pages/projects/Projects";
-import Contacts from "./components/pages/Contacts";
+import Contacts from "./components/pages/contacts/Contacts";
 
 export default {
   name: "App",
@@ -43,12 +43,13 @@ export default {
   text-align: center;
 }
 #app {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    79deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(115, 75, 235, 1) 48%,
-    rgba(51, 56, 179, 1) 100%
-  );
+  // background: rgb(2, 0, 36);
+  // background: linear-gradient(
+  //   79deg,
+  //   rgba(2, 0, 36, 1) 0%,
+  //   rgba(115, 75, 235, 1) 48%,
+  //   rgba(51, 56, 179, 1) 100%
+  // );
+  background-color: #49476e;
 }
 </style>
