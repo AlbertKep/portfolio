@@ -21,7 +21,8 @@ export default {
 .home {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  flex-direction: column;
 }
 </style>
