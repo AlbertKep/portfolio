@@ -22,6 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 .projects {
-  height: 100vh;
+  // height: 100vh;
+  padding: 2em 0.7em;
 }
 </style>

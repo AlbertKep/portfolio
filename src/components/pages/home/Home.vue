@@ -1,14 +1,14 @@
 <template>
   <section class="home">
-    <the-header :title="title" />
+    <logo />
   </section>
 </template>
 
 <script>
-import TheHeader from "../UI/TheHeader";
+import Logo from "./HomeLogo";
 export default {
   name: "Home",
-  components: { TheHeader },
+  components: { Logo },
   data() {
     return {
       title: "Home"
@@ -20,5 +20,8 @@ export default {
 <style lang="scss" scoped>
 .home {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

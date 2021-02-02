@@ -19,3 +19,8 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.contact {
+  padding: 2em 0.7em;
+}
+</style>

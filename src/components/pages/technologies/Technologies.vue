@@ -58,7 +58,8 @@ export default {
 
 <style lang="scss" scoped>
 .technologies {
-  height: 100vh;
+  // height: 100vh;
+  padding: 1em;
   &__container {
     margin-top: 3em;
   }

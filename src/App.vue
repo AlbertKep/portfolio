@@ -11,7 +11,7 @@
 <script>
 import TheHamburgerMenu from "./components/UI/TheHamburgerMenu";
 import TheMenu from "./components/UI/TheMenu";
-import Home from "./components/pages/Home";
+import Home from "./components/pages/home/Home";
 import About from "./components/pages/about/About";
 import Technologies from "./components/pages/technologies/Technologies";
 import Projects from "./components/pages/projects/Projects";

@@ -1,5 +1,5 @@
 <template>
-  <section ref="aboutSection" class="about-container">
+  <section ref="aboutSection" class="about">
     <the-header :title="title" />
     <about-content></about-content>
   </section>
@@ -16,24 +16,13 @@ export default {
     return {
       title: "About"
     };
-  },
-  mounted() {
-    this.showRefs();
-  },
-  methods: {
-    showRefs() {
-      // console.log(
-      //   this.$refs.aboutSection.getBoundingClientRect().top + window.scrollY
-      // );
-      console.log(window.scrollY);
-      console.log(this.$refs.aboutSection.offsetHeight);
-    }
   }
 };
 </script>
 
 <style>
-.about-container {
-  height: 100vh;
+.about {
+  /* height: 100vh; */
+  padding: 2em 0.7em;
 }
 </style>
