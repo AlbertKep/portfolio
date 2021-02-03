@@ -7,11 +7,58 @@
     <h1 class="logo__title">Hello Guest</h1>
     <div class="logo__line logo__line--bottom-one"></div>
     <div class="logo__line logo__line--bottom-two"></div>
-    <div class="logo__line logo__line--bottom-three"></div>
-    <div class="logo__line logo__line--bottom-four"></div>
+    <div
+      ref="lineBottomThree"
+      class="logo__line logo__line--bottom-three"
+    ></div>
+    <div ref="lineBottomFour" class="logo__line logo__line--bottom-four"></div>
   </header>
   <p class="logo__paragraph">Welcome on my website</p>
 </template>
+
+<script>
+import gsap from "gsap";
+
+export default {
+  mounted() {
+    this.animation();
+  },
+  methods: {
+    animation() {
+      const tl = gsap.timeline();
+      tl.fromTo(
+        ".logo__line--top-one, .logo__line--top-two",
+        { x: 100 },
+        { x: 0, duration: 1.2 }
+      )
+        .fromTo(
+          ".logo__line--top-three, .logo__line--top-four",
+          { y: 100 },
+          { y: 0, duration: 1.2 },
+          "-=1.2"
+        )
+        .fromTo(
+          ".logo__line--bottom-one, .logo__line--bottom-two",
+          { x: -100 },
+          { x: 0, duration: 1.2 },
+          "-=1.2"
+        )
+        .fromTo(
+          ".logo__line--bottom-three, .logo__line--bottom-four",
+          { y: -100 },
+          { y: 0, duration: 1.2 },
+          "-=1.2"
+        )
+        .fromTo(".logo__title", { opacity: 0 }, { opacity: 1 })
+        .fromTo(
+          ".logo__paragraph",
+          { y: 50, opacity: 0 },
+          { y: 0, opacity: 1 }
+        );
+    }
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .logo {
@@ -19,7 +66,7 @@
   width: 5em;
   height: 5em;
   padding: 4em;
-  border: 2px solid #707070;
+  border: 1px solid;
   border-radius: 100%;
   display: flex;
   justify-content: center;
