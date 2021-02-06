@@ -1,17 +1,12 @@
 <template>
   <header class="logo">
-    <div class="logo__line logo__line--top-one"></div>
-    <div class="logo__line logo__line--top-two"></div>
-    <div class="logo__line logo__line--top-three"></div>
-    <div class="logo__line logo__line--top-four"></div>
     <h1 class="logo__title">Hello Guest</h1>
-    <div class="logo__line logo__line--bottom-one"></div>
-    <div class="logo__line logo__line--bottom-two"></div>
     <div
-      ref="lineBottomThree"
-      class="logo__line logo__line--bottom-three"
+      v-for="line in lines"
+      :key="line.name"
+      class="logo__line"
+      :class="line.class"
     ></div>
-    <div ref="lineBottomFour" class="logo__line logo__line--bottom-four"></div>
   </header>
   <p class="logo__paragraph">Welcome on my website</p>
 </template>
@@ -20,41 +15,50 @@
 import gsap from "gsap";
 
 export default {
+  data() {
+    return {
+      lines: [
+        { name: "lineTopOne", class: "logo__line logo__line--top-one" },
+        { name: "lineTopTwo", class: "logo__line logo__line--top-two" },
+        { name: "lineTopThree", class: "logo__line logo__line--top-three" },
+        { name: "lineTopFour", class: "logo__line logo__line--top-four" },
+        { name: "lineBottomOne", class: "logo__line logo__line--bottom-one" },
+        { name: "lineBottomTwo", class: "logo__line logo__line--bottom-two" },
+        {
+          name: "lineBottomThree",
+          class: "logo__line logo__line--bottom-three"
+        },
+        { name: "lineBottomFour", class: "logo__line logo__line--bottom-four" }
+      ]
+    };
+  },
   mounted() {
-    this.animation();
+    this.animateLogo();
   },
   methods: {
-    animation() {
+    animateLogo() {
       const tl = gsap.timeline();
-      tl.fromTo(
-        ".logo__line--top-one, .logo__line--top-two",
-        { x: 100 },
-        { x: 0, duration: 1.2 }
-      )
-        .fromTo(
+      tl.from(".logo__line--top-one, .logo__line--top-two", {
+        x: 100,
+        duration: 1.2
+      })
+        .from(
           ".logo__line--top-three, .logo__line--top-four",
-          { y: 100 },
-          { y: 0, duration: 1.2 },
+          { y: 100, duration: 1.2 },
           "-=1.2"
         )
-        .fromTo(
+        .from(
           ".logo__line--bottom-one, .logo__line--bottom-two",
-          { x: -100 },
-          { x: 0, duration: 1.2 },
+          { x: -100, duration: 1.2 },
           "-=1.2"
         )
-        .fromTo(
+        .from(
           ".logo__line--bottom-three, .logo__line--bottom-four",
-          { y: -100 },
-          { y: 0, duration: 1.2 },
+          { y: -100, duration: 1.2 },
           "-=1.2"
         )
-        .fromTo(".logo__title", { opacity: 0 }, { opacity: 1 })
-        .fromTo(
-          ".logo__paragraph",
-          { y: 50, opacity: 0 },
-          { y: 0, opacity: 1 }
-        );
+        .from(".logo__title", { opacity: 0 })
+        .from(".logo__paragraph", { y: 50, opacity: 0 });
     }
   }
 };
