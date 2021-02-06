@@ -42,6 +42,9 @@ export default {
   color: #fff;
   text-align: center;
 }
+html {
+  scroll-behavior: smooth;
+}
 #app {
   // background: rgb(2, 0, 36);
   // background: linear-gradient(
@@ -50,6 +53,7 @@ export default {
   //   rgba(115, 75, 235, 1) 48%,
   //   rgba(51, 56, 179, 1) 100%
   // );
-  background-color: #49476e;
+  // background-color: #49476e;
+  background-color: #242582;
 }
 </style>

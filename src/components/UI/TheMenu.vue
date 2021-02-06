@@ -10,7 +10,7 @@
         class="menu-container__element"
         @click="toggleMenu"
       >
-        {{ element.name }}
+        <a :href="element.id">{{ element.name }}</a>
       </li>
     </ul>
   </nav>
@@ -20,11 +20,11 @@ export default {
   data() {
     return {
       menuElements: [
-        { name: "Home" },
-        { name: "About" },
-        { name: "Technologies" },
-        { name: "Projects" },
-        { name: "Contact" }
+        { name: "Home", id: "#home" },
+        { name: "About", id: "#about" },
+        { name: "Technologies", id: "#technologies" },
+        { name: "Projects", id: "#projects" },
+        { name: "Contact", id: "#contacts" }
       ]
     };
   },
@@ -63,10 +63,14 @@ export default {
     transform: scale(1);
   }
   &__element {
-    color: #904beb;
     list-style-type: none;
     font-size: 1.7em;
     padding-top: 0.5em;
+
+    a {
+      color: #242582;
+      text-decoration: none;
+    }
   }
 }
 </style>

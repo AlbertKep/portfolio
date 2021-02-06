@@ -1,5 +1,5 @@
 <template>
-  <section class="projects">
+  <section id="projects" class="projects">
     <the-header :title="title" />
     <slider />
   </section>
@@ -22,7 +22,6 @@ export default {
 
 <style lang="scss" scoped>
 .projects {
-  // height: 100vh;
   padding: 2em 0.7em;
 }
 </style>

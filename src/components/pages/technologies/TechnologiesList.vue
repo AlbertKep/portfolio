@@ -51,7 +51,7 @@ export default {
 
   &__icon {
     display: block;
-    width: 1.5em;
+    width: 1.2em;
     margin: auto;
     padding: 0.4em 0.2em;
   }

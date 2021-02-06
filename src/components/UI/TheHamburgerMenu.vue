@@ -63,7 +63,7 @@ export default {
   &__element {
     display: block;
     min-height: 2px;
-    background-color: #904beb;
+    background-color: #242582;
     margin-top: 0.4em;
     transition: all 0.5s ease-in-out;
     width: 100%;

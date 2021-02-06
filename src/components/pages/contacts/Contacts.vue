@@ -1,5 +1,5 @@
 <template>
-  <section class="contact">
+  <section id="contacts" class="contact">
     <the-header :title="title" />
     <contact-form />
   </section>

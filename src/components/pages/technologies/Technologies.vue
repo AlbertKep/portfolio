@@ -1,5 +1,5 @@
 <template>
-  <section class="technologies">
+  <section id="technologies" class="technologies">
     <the-header :title="title" />
     <div class="technologies-container">
       <technologies-subtitle title="Use:" />
@@ -58,7 +58,6 @@ export default {
 
 <style lang="scss" scoped>
 .technologies {
-  // height: 100vh;
   padding: 1em;
   &__container {
     margin-top: 3em;

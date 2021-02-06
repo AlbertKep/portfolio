@@ -1,5 +1,5 @@
 <template>
-  <section ref="aboutSection" class="about">
+  <section id="about" ref="aboutSection" class="about">
     <the-header :title="title" />
     <about-content></about-content>
   </section>
