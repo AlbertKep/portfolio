@@ -54,6 +54,9 @@ export default {
     };
   },
   methods: {
+    formValidation() {
+      // if(this.name)
+    },
     sendEmail(e) {
       emailjs
         .sendForm(

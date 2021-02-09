@@ -5,20 +5,19 @@
   ></div>
   <div class="hamburger-menu" @click="toggleMenu">
     <span
-      class="hamburger-menu__element"
+      class="hamburger-menu__element hamburger-menu__element--one"
       :class="{ 'hamburger-menu__element--active-menu-one': menuIsActive }"
     ></span>
+    <span class="hamburger-menu__element hamburger-menu__element--two"></span>
     <span
-      class="hamburger-menu__element"
-      :class="{ 'hamburger-menu__element--active-menu-two': menuIsActive }"
-    ></span>
-    <span
-      class="hamburger-menu__element"
+      class="hamburger-menu__element hamburger-menu__element--three"
       :class="{ 'hamburger-menu__element--active-menu-three': menuIsActive }"
     ></span>
   </div>
 </template>
 <script>
+import gsap from "gsap";
+
 export default {
   data() {
     return {};
@@ -31,6 +30,43 @@ export default {
   methods: {
     toggleMenu() {
       this.$store.dispatch("menuIsActive");
+      this.menuIsActive ? this.openMenu() : this.closeMenu();
+    },
+    openMenu() {
+      const timelineOpenMenu = gsap.timeline();
+      timelineOpenMenu
+        .to(".hamburger-menu__element--two", {
+          x: -40,
+          duration: 0.1,
+          opacity: 0
+        })
+        .to(".hamburger-menu__element--one", { y: 8 }, "-=1")
+        .to(".hamburger-menu__element--three", { y: -8 }, "-=1")
+        .to(".hamburger-menu__element--one", { rotation: 35 }, "-=1.5")
+        .to(".hamburger-menu__element--three", { rotation: -35 }, "-=1.5");
+    },
+    closeMenu() {
+      const timelineCloseMenu = gsap.timeline();
+      timelineCloseMenu
+        .to(".hamburger-menu__element--two", {
+          x: 0,
+          duration: 0.1,
+          opacity: 1
+        })
+        .to(
+          ".hamburger-menu__element--one, .hamburger-menu__element--three",
+          {
+            y: 0
+          },
+          "-=1.2"
+        )
+        .to(
+          ".hamburger-menu__element--one, .hamburger-menu__element--three",
+          {
+            rotation: 0
+          },
+          "-=1.2"
+        );
     }
   }
 };
@@ -43,8 +79,8 @@ export default {
   position: fixed;
   top: 0;
   right: 0;
-  width: 100px;
-  height: 100px;
+  width: 125px;
+  height: 125px;
   transition: all 0.5s ease-in-out;
 
   &--active-menu {
@@ -54,7 +90,7 @@ export default {
 .hamburger-menu {
   cursor: pointer;
   width: 10%;
-  padding: 1.2em;
+  padding: 2em;
   position: fixed;
   top: 0;
   right: 0;
@@ -68,18 +104,18 @@ export default {
     transition: all 0.5s ease-in-out;
     width: 100%;
 
-    &--active-menu-one {
-      width: 100%;
-      // background-color: #904beb;
-    }
-    &--active-menu-two {
-      width: 66%;
-      // background-color: #904beb;
-    }
-    &--active-menu-three {
-      width: 33%;
-      // background-color: #904beb;
-    }
+    // &--active-menu-one {
+    //   width: 100%;
+    //   // background-color: #904beb;
+    // }
+    // &--active-menu-two {
+    //   width: 66%;
+    //   // background-color: #904beb;
+    // }
+    // &--active-menu-three {
+    //   width: 33%;
+    //   // background-color: #904beb;
+    // }
   }
 }
 </style>
