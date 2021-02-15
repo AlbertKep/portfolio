@@ -1,45 +1,46 @@
 <template>
-  <div class="form-kontener">
-    <form class="form" @submit.prevent="sendEmail">
-      <div class="form__container">
-        <input
-          id="name"
-          v-model="name"
-          name="name"
-          class="form__input"
-          type="text"
-          required
-        />
-        <label class="form__label" for="name">Name:</label>
-      </div>
-      <div class="form__container">
-        <input
-          id="email"
-          v-model="email"
-          name="email"
-          class="form__input"
-          type="email"
-          required
-        />
-        <label class="form__label" for="email">E-mail:</label>
-      </div>
-      <div class="form__container">
-        <textarea
-          id="message"
-          v-model="message"
-          name="message"
-          class="form__message"
-          rows="5"
-          cols="33"
-          required
-        ></textarea>
-        <label class="form__label" for="message">Your message: </label>
-      </div>
-      <div class="form__container">
-        <button class="form__button">Send</button>
-      </div>
-    </form>
-  </div>
+  <form class="form" @submit.prevent="sendEmail">
+    <div class="form__container">
+      <input
+        id="name"
+        v-model="name"
+        name="name"
+        class="form__input"
+        type="text"
+        required
+        @keyup="formValidation"
+      />
+      <label class="form__label" for="name">Name:</label>
+    </div>
+    <div class="form__container">
+      <input
+        id="email"
+        v-model="email"
+        name="email"
+        class="form__input"
+        type="email"
+        required
+        @keyup="formValidation"
+      />
+      <label class="form__label" for="email">E-mail:</label>
+    </div>
+    <div class="form__container">
+      <textarea
+        id="message"
+        v-model="message"
+        name="message"
+        class="form__message"
+        rows="5"
+        cols="33"
+        required
+        @keyup="formValidation"
+      ></textarea>
+      <label class="form__label" for="message">Your message: </label>
+    </div>
+    <div class="form__container">
+      <button class="form__button" :disabled="!isValid">Send</button>
+    </div>
+  </form>
 </template>
 
 <script>
@@ -50,12 +51,26 @@ export default {
     return {
       name: "",
       email: "",
-      message: ""
+      message: "",
+      patterns: {
+        name: /^[\w\sąęćóżź]{3,20}$/,
+        email: /^([a-z\d/.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
+        message: /^[a-zA-Z\d\W]+$/
+      },
+      isValid: false
     };
   },
   methods: {
     formValidation() {
-      // if(this.name)
+      if (
+        this.patterns.name.test(this.name) &&
+        this.patterns.email.test(this.email) &&
+        this.patterns.message.test(this.message)
+      ) {
+        this.isValid = true;
+      } else {
+        this.isValid = false;
+      }
     },
     sendEmail(e) {
       emailjs
@@ -133,6 +148,13 @@ export default {
     &:hover {
       background-color: #fff;
       color: #242582;
+    }
+    &:disabled {
+      opacity: 0.4;
+      &:hover {
+        background-color: transparent;
+        color: #fff;
+      }
     }
   }
 }
