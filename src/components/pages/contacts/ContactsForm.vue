@@ -3,7 +3,7 @@
     <div class="form__container">
       <input
         id="name"
-        v-model="name"
+        v-model.trim="name"
         name="name"
         class="form__input"
         type="text"
@@ -15,7 +15,7 @@
     <div class="form__container">
       <input
         id="email"
-        v-model="email"
+        v-model.trim="email"
         name="email"
         class="form__input"
         type="email"
@@ -27,7 +27,7 @@
     <div class="form__container">
       <textarea
         id="message"
-        v-model="message"
+        v-model.trim="message"
         name="message"
         class="form__message"
         rows="5"
@@ -41,12 +41,22 @@
       <button class="form__button" :disabled="!isValid">Send</button>
     </div>
   </form>
+  <teleport to="body">
+    <contact-modal
+      v-if="modalIsOpen"
+      :message="modalMessage"
+      @showModal="showModal"
+    ></contact-modal>
+  </teleport>
 </template>
 
 <script>
 import emailjs from "emailjs-com";
 
+import ContactModal from "./ContactModal";
+
 export default {
+  components: { ContactModal },
   data() {
     return {
       name: "",
@@ -57,7 +67,9 @@ export default {
         email: /^([a-z\d/.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
         message: /^[a-zA-Z\d\W]+$/
       },
-      isValid: false
+      isValid: false,
+      modalIsOpen: false,
+      modalMessage: ""
     };
   },
   methods: {
@@ -73,6 +85,7 @@ export default {
       }
     },
     sendEmail(e) {
+      this.modalIsOpen = true;
       emailjs
         .sendForm(
           "service_d2gs4jb",
@@ -88,11 +101,17 @@ export default {
         .then(
           result => {
             console.log("SUCCESS!", result.status, result.text);
+            this.modalMessage = "Thanks for the message sent!";
           },
           error => {
             console.log("FAILED...", error);
+            this.modalMessage = "Something went wrong. Please try again!";
           }
         );
+      (this.name = ""), (this.email = ""), (this.message = "");
+    },
+    showModal() {
+      this.modalIsOpen = false;
     }
   }
 };
