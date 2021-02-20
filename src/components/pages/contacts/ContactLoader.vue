@@ -1,8 +1,8 @@
 <template>
   <div class="loader">
-    <span class="loader__dot loader__dot--one"></span>
-    <span class="loader__dot loader__dot--two"></span>
-    <span class="loader__dot loader__dot--three"></span>
+    <span class="loader__dot"></span>
+    <span class="loader__dot"></span>
+    <span class="loader__dot"></span>
   </div>
 </template>
 <script>

@@ -4,7 +4,7 @@
       <p class="modal__information">{{ message }}</p>
       <button class="modal__button" @click="$emit('showModal')">Close</button>
     </div>
-    <contact-loader v-else></contact-loader>
+    <contact-loader v-else />
   </div>
 </template>
 <script>
