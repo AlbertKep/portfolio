@@ -108,7 +108,10 @@ export default {
             this.modalMessage = "Something went wrong. Please try again!";
           }
         );
-      (this.name = ""), (this.email = ""), (this.message = "");
+      (this.name = ""),
+        (this.email = ""),
+        (this.message = ""),
+        (this.isValid = false);
     },
     showModal() {
       this.modalIsOpen = false;

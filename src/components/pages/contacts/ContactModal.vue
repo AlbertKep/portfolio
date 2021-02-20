@@ -1,13 +1,18 @@
 <template>
   <div class="modal">
-    <div class="modal__container">
+    <div v-if="message" class="modal__container">
       <p class="modal__information">{{ message }}</p>
       <button class="modal__button" @click="$emit('showModal')">Close</button>
     </div>
+    <contact-loader v-else></contact-loader>
   </div>
 </template>
 <script>
+import ContactLoader from "./ContactLoader";
 export default {
+  components: {
+    ContactLoader
+  },
   props: {
     message: {
       type: String,
@@ -38,8 +43,8 @@ export default {
     color: #242582;
   }
   &__information {
-    font-size: 1.2em;
-    padding: 1em;
+    font-size: 1.3em;
+    padding: 0.7em;
   }
   &__button {
     padding: 0.5em 1em;
