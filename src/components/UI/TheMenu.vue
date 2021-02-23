@@ -1,5 +1,4 @@
 <template>
-  <the-hamburger-menu ref="hamburgerMenu" />
   <nav
     class="menu-container"
     :class="{ 'menu-container--show-menu': menuIsActive }"
@@ -17,12 +16,7 @@
   </nav>
 </template>
 <script>
-import TheHamburgerMenu from "./TheHamburgerMenu";
-
 export default {
-  components: {
-    TheHamburgerMenu
-  },
   data() {
     return {
       menuElements: [
@@ -42,7 +36,6 @@ export default {
   methods: {
     toggleMenu() {
       this.$store.dispatch("menuIsActive", this.menuIsActive);
-      this.$refs.hamburgerMenu.closeMenu();
     }
   }
 };

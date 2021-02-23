@@ -1,4 +1,5 @@
 <template>
+  <the-hamburger-menu />
   <the-menu />
   <Home />
   <About />
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+import TheHamburgerMenu from "./components/UI/TheHamburgerMenu";
 import TheMenu from "./components/UI/TheMenu";
 import Home from "./components/pages/home/Home";
 import About from "./components/pages/about/About";
@@ -18,6 +20,7 @@ import Contacts from "./components/pages/contacts/Contacts";
 export default {
   name: "App",
   components: {
+    TheHamburgerMenu,
     TheMenu,
     Home,
     About,
