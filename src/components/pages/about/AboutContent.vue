@@ -1,15 +1,6 @@
 <template>
   <p ref="aboutContent" class="about__content">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer took a galley of type and scrambled it to
-    make a type specimen book. Lorem Ipsum is simply dummy text of the printing
-    and typesetting industry. Lorem Ipsum has been the industry's Lorem Ipsum is
-    simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-    been the industry's standard dummy text ever since the 1500s, when an
-    unknown printer took a galley of type and scrambled it to make a type
-    specimen book. Lorem Ipsum is simply dummy text of the printing and
-    typesetting industry. Lorem Ipsum has been the industry's
+    {{ aboutContent }}
   </p>
 </template>
 
@@ -17,17 +8,25 @@
 import animation from "@/mixins/startAnimation";
 export default {
   mixins: [animation],
-
+  computed: {
+    aboutContent() {
+      return this.$store.state.aboutContent;
+    }
+  },
   mounted() {
     this.startAnimation(
       this.observerCallback,
       "start-animation",
       this.$refs.aboutContent
     );
+    this.getAboutData();
   },
   methods: {
     observerCallback(entry, clss) {
       entry.target.classList.add(clss);
+    },
+    getAboutData() {
+      this.$store.dispatch("getAboutData");
     }
   }
 };
