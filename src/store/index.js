@@ -24,9 +24,14 @@ const store = createStore({
     async getAboutData({commit}) {
       const baseURI = 'https://albert-kepski-portfolio.herokuapp.com/abouts'
 
+      try {        
       const getData = await axios.get(baseURI)
       const data = await getData.data[0].description
       commit('getAboutData', data)
+      } catch (error){
+        const errorMessage = 'Something went wrong. Refresh the page.'
+      commit('getAboutData', errorMessage)
+      }
       
     }
   }
