@@ -5,7 +5,8 @@ const store = createStore({
   state() {
     return {
       menuIsActive: false,
-      aboutContent: ''
+      aboutContent: '',
+      projects: []
     }
   },
   mutations: {
@@ -14,6 +15,11 @@ const store = createStore({
     },
     getAboutData(state, payload) {
       state.aboutContent = payload
+    },
+    getProjects(state, payload) {
+      state.projects = payload
+      console.log(state.projects)
+
     }
 
   },
@@ -31,8 +37,18 @@ const store = createStore({
       } catch (error){
         const errorMessage = 'Something went wrong. Refresh the page.'
       commit('getAboutData', errorMessage)
+      }      
+    },
+    async getProjects({commit}) {
+      const baseURI = 'https://albert-kepski-portfolio.herokuapp.com/projects'
+
+      try {
+        const getData = await axios.get(baseURI)
+        const data = getData.data
+        commit('getProjects', data)
+      } catch (error) {
+        console.log(error)
       }
-      
     }
   }
 })
