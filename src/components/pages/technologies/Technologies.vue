@@ -6,7 +6,7 @@
       <technologies-list :icons="useIcons" />
     </div>
     <div class="technologies-container">
-      <technologies-subtitle title="In the future:" />
+      <technologies-subtitle title="Future:" />
       <technologies-list :icons="inTheFutureIcons" />
     </div>
   </section>

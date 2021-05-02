@@ -43,14 +43,6 @@ html {
   scroll-behavior: smooth;
 }
 #app {
-  // background: rgb(2, 0, 36);
-  // background: linear-gradient(
-  //   79deg,
-  //   rgba(2, 0, 36, 1) 0%,
-  //   rgba(115, 75, 235, 1) 48%,
-  //   rgba(51, 56, 179, 1) 100%
-  // );
-  // background-color: #49476e;
   background-color: #242582;
 }
 </style>

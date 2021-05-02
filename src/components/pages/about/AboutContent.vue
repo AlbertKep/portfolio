@@ -1,7 +1,9 @@
 <template>
-  <p ref="aboutContent" class="about__content">
-    {{ aboutContent }}
-  </p>
+  <div class="about__container">
+    <p ref="aboutContent" class="about__content">
+      {{ aboutContent }}
+    </p>
+  </div>
 </template>
 
 <script>
@@ -33,6 +35,7 @@ export default {
 </script>
 <style scoped>
 .about__content {
+  grid-area: content;
   margin-top: 0.5em;
   padding: 1em;
   opacity: 0;
@@ -42,5 +45,12 @@ export default {
 .start-animation {
   opacity: 1;
   transform: translateY(40px);
+}
+@media only screen and (min-width: 768px) {
+  .about__container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-areas: ". content";
+  }
 }
 </style>

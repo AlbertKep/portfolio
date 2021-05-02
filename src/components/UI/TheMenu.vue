@@ -41,8 +41,11 @@ export default {
   },
   methods: {
     toggleMenu() {
-      this.$store.dispatch("menuIsActive", this.menuIsActive);
-      this.$refs.hamburgerMenu.closeMenu();
+      const widthOfScreen = document.documentElement.clientWidth;
+      if (widthOfScreen < 768) {
+        this.$store.dispatch("menuIsActive", this.menuIsActive);
+        this.$refs.hamburgerMenu.closeMenu();
+      }
     }
   }
 };
@@ -77,6 +80,19 @@ export default {
     a {
       color: #242582;
       text-decoration: none;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .menu-container {
+    visibility: visible;
+    transform: scale(1);
+    width: 30%;
+    display: flex;
+    background-color: #fff;
+
+    &__element {
+      padding: 0.6em;
     }
   }
 }

@@ -25,4 +25,10 @@ export default {
   align-items: center;
   flex-direction: column;
 }
+@media only screen and (min-width: 768px) {
+  .home {
+    width: 70%;
+    align-items: flex-end;
+  }
+}
 </style>

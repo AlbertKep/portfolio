@@ -60,4 +60,10 @@ export default {
 .start-animation {
   transform: scale(1);
 }
+@media only screen and (min-width: 768px) {
+  .icon-container__icon {
+    width: 2em;
+    padding: 1em 0.3em;
+  }
+}
 </style>

@@ -18,4 +18,13 @@ export default {
   font-size: 1.7em;
   padding: 1em;
 }
+@media only screen and (min-width: 768px) {
+  .technologies__subtitle {
+    padding-bottom: 1.2em;
+    position: relative;
+    top: 1em;
+    left: 7.5em;
+    width: 200px;
+  }
+}
 </style>

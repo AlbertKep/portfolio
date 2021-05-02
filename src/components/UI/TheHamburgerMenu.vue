@@ -103,19 +103,12 @@ export default {
     margin-top: 0.4em;
     transition: all 0.5s ease-in-out;
     width: 100%;
-
-    // &--active-menu-one {
-    //   width: 100%;
-    //   // background-color: #904beb;
-    // }
-    // &--active-menu-two {
-    //   width: 66%;
-    //   // background-color: #904beb;
-    // }
-    // &--active-menu-three {
-    //   width: 33%;
-    //   // background-color: #904beb;
-    // }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .menu-container,
+  .hamburger-menu {
+    display: none;
   }
 }
 </style>

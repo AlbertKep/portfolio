@@ -111,7 +111,7 @@ export default {
     height: 0;
     width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     background-color: #fff;
     opacity: 0.8;
     transition: all 0.5s ease-in;

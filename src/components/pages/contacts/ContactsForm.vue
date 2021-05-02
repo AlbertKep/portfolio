@@ -1,6 +1,6 @@
 <template>
   <form class="form" @submit.prevent="sendEmail">
-    <div class="form__container">
+    <div class="form__container name">
       <input
         id="name"
         v-model.trim="name"
@@ -12,7 +12,7 @@
       />
       <label class="form__label" for="name">Name:</label>
     </div>
-    <div class="form__container">
+    <div class="form__container email">
       <input
         id="email"
         v-model.trim="email"
@@ -24,7 +24,7 @@
       />
       <label class="form__label" for="email">E-mail:</label>
     </div>
-    <div class="form__container">
+    <div class="form__container message">
       <textarea
         id="message"
         v-model.trim="message"
@@ -37,7 +37,7 @@
       ></textarea>
       <label class="form__label" for="message">Your message: </label>
     </div>
-    <div class="form__container">
+    <div class="form__container submit-button">
       <button class="form__button" :disabled="!isValid">Send</button>
     </div>
   </form>
@@ -177,6 +177,29 @@ export default {
         background-color: transparent;
         color: #fff;
       }
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .form {
+    display: grid;
+    grid-template-columns: 35% 50% 15%;
+    grid-template-areas:
+      ". name ."
+      ". email ."
+      ". message ."
+      ". button .";
+    .name {
+      grid-area: name;
+    }
+    .email {
+      grid-area: email;
+    }
+    .message {
+      grid-area: message;
+    }
+    .submit-button {
+      grid-area: button;
     }
   }
 }
